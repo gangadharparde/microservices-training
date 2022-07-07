@@ -1,0 +1,3 @@
+Check Browser For Registry-
+http://192.168.0.25:8761/
+http://localhost:8761/

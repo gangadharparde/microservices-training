@@ -1,0 +1,26 @@
+Run all the given *.bat file in given sequence
+ 1runServer.bat
+ 2runProducerOn5050.bat
+ 3runProducerOn6060.bat
+ 4runProducerOn7070.bat
+ 5runConsumer10000.bat
+ 5runConsumer10001.bat
+
+Open Eureka:
+http://localhost:8761/
+
+Verify Instances:
+EMPLOYEE-CONSUMER 	n/a (2) 	(2) 	UP (2) - employee-consumer:10000 , employee-consumer:10001
+EMPLOYEE-PRODUCER 	n/a (3) 	(3) 	UP (3) - employee-producer:7070 , employee-producer:5050 , employee-producer:6060
+
+Click the link on below to open two seperate browser windows:
+employee-consumer:10000 , employee-consumer:10001
+
+Now do refresh multiple times on both the consumers:
+You will see differnt instances consumer for different time, check port number are changing.
+
+
+Tough we have configured multple instances but code is missing the client side load balancing mechanism which need to be implemented using Ribbon.
+
+Also verify different eureka endpoint:
+http://localhost:8761/eureka/apps

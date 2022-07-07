@@ -1,0 +1,25 @@
+Run all the given *.bat file in given sequence
+ 1runServer.bat
+ 2runProducerOn5050.bat
+ 3runProducerOn6060.bat
+ 4runProducerOn7070.bat
+ 5runConsumer10000.bat
+ 5runConsumer10001.bat
+
+Open Eureka:
+http://localhost:8761/
+
+Verify Instances:
+EMPLOYEE-CONSUMER-RIBBON-HYSTRIX 	n/a (2) 	(2) 	UP (2) - employee-consumer-ribbon-hystrix:10000 , employee-consumer-ribbon-hystrix:10001
+EMPLOYEE-PRODUCER-RIBBON-HYSTRIX 	n/a (3) 	(3) 	UP (3) - employee-producer-ribbon-hystrix:7070 , employee-producer-ribbon-hystrix:5050 , employee-producer-ribbon-hystrix:6060
+
+Click the link on below to open two seperate browser windows:
+employee-consumer-ribbon-hystrix:10000 , employee-consumer-ribbon-hystrix:10001
+
+Now do refresh multiple times on both the consumers:
+You will see differnt instances consumer for EACH time, check port number are changing for EACH Request this is due to load balancing on each sever for each request.
+
+Also verify different eureka endpoint:
+http://localhost:8761/eureka/apps
+
+NOTE: Do wait for the client to be register and then click on link dont do hurry.

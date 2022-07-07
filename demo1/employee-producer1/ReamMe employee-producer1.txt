@@ -1,0 +1,4 @@
+Set path JDK 1.8
+Execute application and run check response
+http://localhost:8080/employee.xml  --> XML response
+http://localhost:8080/employee.json --> JSON response
